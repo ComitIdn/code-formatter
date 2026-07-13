@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Formatter · ComitIdn</title>
+    <meta name="description" content="Opinionated code formatter untuk JavaScript, PHP, Python, dan lainnya." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <a href="/">⚡ Code Formatter</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#playground">Coba Sekarang</a></li>
+                <li><a href="#features">Fitur</a></li>
+                <li><a href="#install">Instalasi</a></li>
+                <li><a href="https://github.com/ComitIdn/code-formatter" target="_blank">GitHub</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Menu">☰</button>
+        </nav>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+        <div class="container">
+            <h1>Opinionated <br /><span>Code Formatter</span></h1>
+            <p class="subtitle">
+                Rapikan kode Anda secara otomatis dengan satu perintah.
+                Mendukung berbagai bahasa pemrograman.
+            </p>
+            <div class="cta-buttons">
+                <a href="#playground" class="btn-primary">Coba Online</a>
+                <a href="#install" class="btn-secondary">Mulai Gunakan</a>
+            </div>
+            <div class="hero-stats">
+                <span>⚡ 10k+ pengguna</span>
+                <span>📦 20+ bahasa</span>
+                <span>🔌 15+ integrasi</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PLAYGROUND / DEMO ===== -->
+    <section id="playground" class="playground">
+        <div class="container">
+            <h2>🎮 Coba Langsung</h2>
+            <p class="section-desc">Tempelkan kode di bawah, lalu klik Format untuk melihat hasilnya.</p>
+            <div class="editor-wrapper">
+                <div class="code-input">
+                    <div class="editor-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="file-name">input.js</span>
+                    </div>
+                    <textarea id="codeInput" spellcheck="false">function hello(name) { console.log("Hello, " + name + "!"); }</textarea>
+                </div>
+                <div class="editor-actions">
+                    <button id="formatBtn" class="btn-primary">✨ Format</button>
+                    <button id="resetBtn" class="btn-secondary">↺ Reset</button>
+                    <span id="statusMsg" class="status-msg"></span>
+                </div>
+                <div class="code-output">
+                    <div class="editor-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="file-name">output.js</span>
+                    </div>
+                    <pre><code id="formattedOutput">// Hasil format akan muncul di sini</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FITUR ===== -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>✨ Fitur Unggulan</h2>
+            <p class="section-desc">Dirancang untuk membuat hidup developer lebih mudah.</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h3>Cepat & Efisien</h3>
+                    <p>Format kode dalam milidetik tanpa mengganggu alur kerja Anda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🌐</div>
+                    <h3>Multi-Bahasa</h3>
+                    <p>Support JavaScript, TypeScript, PHP, Python, CSS, HTML, JSON, dan banyak lagi.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔌</div>
+                    <h3>Integrasi Luas</h3>
+                    <p>Plugin untuk VS Code, Sublime Text, Vim, Emacs, dan semua editor favorit Anda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎨</div>
+                    <h3>Kustomisasi</h3>
+                    <p>Atur indentasi, lebar baris, dan aturan format sesuai selera tim Anda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🛡</div>
+                    <h3>Konsistensi</h3>
+                    <p>Hilangkan perdebatan gaya kode di code review. Fokus pada logika.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📦</div>
+                    <h3>Zero Config</h3>
+                    <p>Jalankan tanpa konfigurasi apapun. Siap pakai di semua proyek.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KODE SEBELUM & SESUDAH ===== -->
+    <section class="compare-section">
+        <div class="container">
+            <h2>🔄 Sebelum & Sesudah</h2>
+            <p class="section-desc">Lihat perbedaannya dalam sekejap.</p>
+            <div class="compare-grid">
+                <div class="compare-card before">
+                    <h3>❌ Sebelum (Berantakan)</h3>
+                    <pre><code>function   hello(  name  )  {
+    console.log(  "Hello, "   +  name +  "!"  )   ;
+    }</code></pre>
+                </div>
+                <div class="compare-card after">
+                    <h3>✅ Sesudah (Rapi)</h3>
+                    <pre><code>function hello(name) {
+  console.log("Hello, " + name + "!");
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INSTALASI ===== -->
+    <section id="install" class="install">
+        <div class="container">
+            <h2>📦 Instalasi</h2>
+            <p class="section-desc">Mulai gunakan dalam 2 langkah mudah.</p>
+            <div class="install-grid">
+                <div class="command-box">
+                    <h3>Dengan npm</h3>
+                    <pre><code>npm install --save-dev code-formatter</code></pre>
+                </div>
+                <div class="command-box">
+                    <h3>Dengan yarn</h3>
+                    <pre><code>yarn add --dev code-formatter</code></pre>
+                </div>
+                <div class="command-box">
+                    <h3>Gunakan CLI</h3>
+                    <pre><code>npx code-formatter --write ./src/**/*.js</code></pre>
+                </div>
+            </div>
+            <div class="install-note">
+                <p>💡 Atau gunakan <strong>VS Code extension</strong> untuk format otomatis saat menyimpan file.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONI ===== -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>💬 Kata Developer</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Mengubah cara saya menulis kode. Tim saya jadi lebih produktif!"</p>
+                    <cite>— Andi, Backend Engineer</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Format kode otomatis menghilangkan 90% perdebatan di code review."</p>
+                    <cite>— Bintang, Tech Lead</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Simple, powerful, dan bekerja di semua proyek saya."</p>
+                    <cite>— Cinta, Fullstack Developer</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CALL TO ACTION ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Siap Merapikan Kode Anda?</h2>
+            <p>Mulai gunakan sekarang dan rasakan perbedaannya.</p>
+            <a href="#install" class="btn-primary">Mulai Sekarang</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span>⚡ Code Formatter</span>
+                    <p>Opinionated code formatter untuk developer modern.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/ComitIdn/code-formatter" target="_blank">GitHub</a>
+                    <a href="#features">Fitur</a>
+                    <a href="#install">Instalasi</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <a href="https://github.com/ComitIdn" target="_blank">ComitIdn</a>. Dibuat dengan ❤️ untuk komunitas.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
